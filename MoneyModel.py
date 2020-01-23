@@ -10,7 +10,12 @@ class MoneyAgent(Agent):
 
     def step(self):
         """the agent step will go here"""
-        print(self.unique_id)
+        if self.wealth == 0:
+            return
+        
+        other_agent = self.random.choice(self.model.schedule.agents)
+        other_agent.wealth += 1
+        self.wealth -= 1
 
 
 class MoneyModel(Model):

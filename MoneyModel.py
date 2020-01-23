@@ -4,13 +4,13 @@ from mesa.time import RandomActivation
 
 class MoneyAgent(Agent):
     """an agent with fixed initial wealth"""
-    def __init__(self, unique_ID, model):
-        super().__init__(unique_ID, model)
+    def __init__(self, unique_id, model):
+        super().__init__(unique_id, model)
         self.wealth = 1
 
     def step(self):
         """the agent step will go here"""
-        pass
+        print(self.unique_id)
 
 
 class MoneyModel(Model):
